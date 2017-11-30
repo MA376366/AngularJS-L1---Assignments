@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html  ng-app="MyApp">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="CDParlorCtrl.js"></script>
+    <style>
+       table, td,th  {
+       border: 1px solid grey;
+       border-collapse: collapse;
+       padding: 5px;
+       }
+       tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+</head>
+<body ng-controller="MyController">
+    <br />
+    <b>  ParlorName : </b>{{ CDParlorName }}<br /><br />
+    <b>  HeadOfficeAddress : </b> {{ CDHeadOfficeAddress }}<br /><br />
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Language</th>
+            <th>Price</th>
+        </tr>
+        <tr ng-repeat="CDObject in CDObjects">
+            <td>{{ CDObject.CDTitle }}</td>
+            <td>{{ CDObject.CDLanguage }}</td>
+            <td>{{ CDObject.CDPrice | currency:"₹":0 }}</td>
+        </tr>
+    </table>
+
+</body>
+</html>

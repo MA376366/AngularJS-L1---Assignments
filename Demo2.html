@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title>Username & City</title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script>
+        var MyApp = angular.module("MyApp", [])
+                           .controller("MyController", function ($scope)
+                           {
+                               $scope.date= new Date();
+                        });
+    </script>
+</head>
+<body ng-controller="MyController">
+    <br />Enter your Username Here : <input type="text" ng-model="userName" /><br /><br />
+          Enter your City Here : <input type="text" ng-model="cityName" /><br /><br />
+    <div>
+        Username     : <h2> {{ userName | uppercase }} </h2><br />
+        City         : <h2> {{ cityName | uppercase }} </h2><br />
+        Today's date   : <h2> {{ date | date:'dd-MM-yyyy'}}</h2>
+    </div>
+</body>
+</html>

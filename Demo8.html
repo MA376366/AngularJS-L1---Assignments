@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title>Primary school </title>
+	<meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script>
+        var MyApp = angular.module("MyApp", [])
+                           .controller("MyController", function ($scope) {
+                               $scope.count = 1;
+                               $scope.num1 = 5;
+                               $scope.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                               $scope.Generate = function () {
+                                  
+                                   if ($scope.count == 1) {
+                                       $scope.value1 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 2) {
+                                       $scope.value2 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 3) {
+                                       $scope.value3 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 4) {
+                                       $scope.value4 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 5) {
+                                       $scope.value5 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 6) {
+                                       $scope.value6 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 7) {
+                                       $scope.value7 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 8) {
+                                       $scope.value8 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 9) {
+                                       $scope.value9 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                                   else if ($scope.count == 10) {
+                                       $scope.value10 = true;
+                                       $scope.count = $scope.count + 1;
+                                   }
+                               };
+                           });
+    </script>
+</head>
+<body ng-controller="MyController">
+    <br />
+    <input type="submit" value="Generate tables of 5" ng-click="Generate()"/><br /><br />
+    <div ng-show="value1">
+       {{ num1  }} * {{numbers[0] }} = {{ num1*numbers[0] }}
+    </div><br />
+    <div ng-show="value2">
+        {{ num1  }} * {{numbers[1] }} = {{ num1*numbers[1] }}
+    </div><br />
+    <div ng-show="value3">
+        {{ num1  }} * {{numbers[2] }} = {{ num1*numbers[2] }}
+    </div><br />
+    <div ng-show="value4">
+        {{ num1  }} * {{numbers[3] }} = {{ num1*numbers[3] }}
+    </div><br />
+    <div ng-show="value5">
+        {{ num1  }} * {{numbers[4] }} = {{ num1*numbers[4] }}
+    </div><br />
+    <div ng-show="value6">
+        {{ num1  }} * {{numbers[5] }} = {{ num1*numbers[5] }}
+    </div><br />
+    <div ng-show="value7">
+        {{ num1  }} * {{numbers[6] }} = {{ num1*numbers[6] }}
+    </div><br />
+    <div ng-show="value8">
+        {{ num1  }} * {{numbers[7] }} = {{ num1*numbers[7] }}
+    </div><br />
+    <div ng-show="value9">
+        {{ num1  }} * {{numbers[8] }} = {{ num1*numbers[8] }}
+    </div><br />
+    <div ng-show="value10">
+        {{ num1  }} * {{numbers[9] }} = {{ num1*numbers[9] }}
+    </div>  
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title>CD details</title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="CDController.js"></script>
+</head>
+<body ng-controller="MyController">
+
+    Enter CD_ID : <input type="text" ng-model="ID" /><br /><br />
+    Enter CD_TITLE : <input type="text" ng-model="TITLE" /><br /><br />
+    Enter CD_PRICE : <input type="text" ng-model="PRICE" /><br /><br />
+    <input type="submit" ng-click="getAllDetails(ID,TITLE,PRICE)"/><br /><br />
+
+    <div ng-repeat="CDObject in CDObjects">
+
+        CD_ID :  {{ CDObject.CDId }} <br /><br />
+        CD_TITLE : {{ CDObject.CDTitle }} <br /><br />
+        CD_PRICE : {{ CDObject.CDPrice }} <br /><br />
+
+    </div> 
+</body>
+</html>

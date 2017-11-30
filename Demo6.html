@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+    <title>Billing form</title>
+	<meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script>
+        var MyApp = angular.module("MyApp", [])
+                           .controller("MyController", function ($scope) {
+                              
+                               $scope.Amount = '80,000';
+
+                           });
+    </script>
+</head>
+<body ng-controller="MyController">
+
+    Total Amount : {{ Amount}}  <br /><br />
+
+    Apply Code : 
+
+    <select ng-model="Code">
+        <option value="CDMK1610">CDMK1610
+        <option value="CDMK1620">CDMK1620
+        <option value="CDMK1690">CDMK1690
+        <option value="OTHER">OTHER
+</select><br /><br />
+    <hr>
+    <div ng-switch="Code">
+        <div ng-switch-when="CDMK1610">
+            <h1>10% OFFER Code Applied Successfully</h1>
+            {{ (80000)-(80000*10/100) }} You have to Pay!!!
+        </div>
+        <div ng-switch-when="CDMK1620">
+            <h1>20% OFFER Code Applied Successfully</h1>
+            {{ (80000)-(80000*20/100) }} You have to Pay!!!
+        </div>
+        <div ng-switch-when="CDMK1690">
+            <h1>90% OFFER Code Applied Successfully</h1>
+            {{ (80000)-(80000*90/100) }} You have to Pay!!!
+        </div> 
+        <div ng-switch-when="OTHER">
+            <h1>5% OFFER Code Applied Successfully</h1>   
+            {{ (80000)-(80000*5/100) }} You have to Pay!!!   
+        </div>
+        <div ng-switch-default>
+            <h1>5% OFFER Code Applied Successfully</h1>
+            {{ (80000)-(80000*5/100) }} You have to Pay!!!
+        </div>
+    </div>
+
+    <!--Final Amount : {{ FAmount }}-->
+
+</body>
+</html>
